@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Plain Text - Port 8080</title>
+        <link rel="stylesheet" href="/templates/styles.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>Plain Text Viewer</h1>
+            <p>Contents of the source file — no encoding applied</p>
+        </header>
+        
+        <div class="badges">
+            <span class="badge badge-plain">NO CIPHER</span>
+            <span class="badge badge-port">PORT 8080</span>
+            <span class="badge badge-tls">🔒 TLS ENCRYPTED</span>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <span class="card-label">{{FILENAME}}</span>
+            </div>
+            <pre>{{PLAIN_TEXT}}</pre>
+        </div>
+        
+        <div class="info-row">
+            <span>File: <strong>{{FILENAME}}</strong></span>
+            <span>Caesar shift: <strong>{{SHIFT}}</strong></span>
+            <span>Transport: <strong>HTTPS / TLS</strong></span>
+        </div>
+    
+        <footer>
+            Python HTTPS server &middot; Wireshark sees only encrypted TLS data &middot; Port 8080
+        </footer>
+    </body>
+</html>
